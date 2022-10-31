@@ -18,3 +18,17 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.item {
+  gap: 15px;
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+}
+
+.div {
+  gap: 15px; 
+  flex-direction: row;
+  align-items: center;
+  line-height: 1;
+}
