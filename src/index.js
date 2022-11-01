@@ -62,13 +62,16 @@ function appendCountries(countries) {
 refs.searchBox.addEventListener('input', debounce(e => {
     refs.info.innerHTML = '';
     refs.list.innerHTML = '';
-    
-    fetchCountries(e.target.value.trim())
+  const query = e.target.value.trim();
+  if (!query) {
+    return
+  }
+    fetchCountries(query)
       .then(data => {
         if (data.length === 1) appendCountry(data[0]);
-        else if (data.length <= 10)
-            appendCountries(data);
-          else Notify.info(
+        else if (data.length <= 10) appendCountries(data);
+        else
+          Notify.info(
             'Too many matches found. Please enter a more specific name.'
           );
       })
