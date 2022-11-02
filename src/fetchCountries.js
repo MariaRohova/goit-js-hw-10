@@ -1,4 +1,6 @@
 export { fetchCountries };
+  
+  const url = 'https://restcountries.com/v3.1/';
 
 function fetchCountries(serch) {
   return fetch(`${url}/name/${serch}`).then(response => {
